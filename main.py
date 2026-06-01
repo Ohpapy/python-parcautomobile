@@ -54,10 +54,7 @@ class Agence:
             if voiture.est_disponible():
                 voiture.afficher_details()
                 print()
-
-
-# Exemple d'utilisation
-
+                
 if __name__ == "__main__":
 
     v1 = Voiture("Renault", "Clio",  2021, "AB-123-CD")
