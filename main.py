@@ -54,7 +54,15 @@ class Agence:
             if voiture.est_disponible():
                 voiture.afficher_details()
                 print()
-                
+    
+    def supprimer_voiture(self, immat):
+        for i, voiture in enumerate(self.voitures):
+            if voiture.immat == immat:
+                del self.voitures[i]
+                print(f"Voiture {voiture.marque} {voiture.modele} supprimée de l'agence.")
+                return
+        print("Voiture non trouvée.")
+    
 if __name__ == "__main__":
 
     v1 = Voiture("Renault", "Clio",  2021, "AB-123-CD")
@@ -70,4 +78,7 @@ if __name__ == "__main__":
 
     agence.louer_voiture("AB-123-CD")
 
+    agence.supprimer_voiture("XY-456-ZT") 
+
     agence.afficher_voitures_disponibles()
+    
